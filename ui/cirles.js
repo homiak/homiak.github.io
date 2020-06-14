@@ -1,6 +1,6 @@
 // Make an instance of two and place it on the page.
 var elem = document.getElementById('main');
-var maxX=800, maxY=700
+var maxX=800, maxY=700;
 
 var params = { width: maxX, height: maxY };
 var two = new Two(params).appendTo(elem);
