@@ -4,11 +4,12 @@ var two = new Two({
     autostart: false
 }).appendTo(document.body);
 
-for (i = 0; i < 50; i++) {
+for (i = 0; i < 100; i++) {
     var rcolor = Math.floor(Math.random()*16777215).toString(16);
     var x = Math.floor(Math.random()*two.width);
     var y = Math.floor(Math.random()*two.height);
-    var c = two.makeCircle(x, y, 200);
+    var r = Math.floor(Math.random()*(two.height/3))+1;
+    var c = two.makeCircle(x, y, r);
     var opacity = Math.random();
 // The object returned has many stylable properties:
     c.linewidth = 0;
