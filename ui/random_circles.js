@@ -1,20 +1,19 @@
-// Make an instance of two and place it on the page.
-var elem = document.getElementById('main');
-var maxX=800, maxY=700
 
-var params = { width: maxX, height: maxY };
-var two = new Two(params).appendTo(elem);
+var two = new Two({
+    fullscreen: true,
+    autostart: false
+}).appendTo(document.body);
 
-for (i = 0; i < 10; i++) {
-    rcolor = Math.floor(Math.random()*16777215).toString(16);
-
-    x = Math.floor(Math.random()*maxX).toString(10);
-    y = Math.floor(Math.random()*maxY).toString(10);
-
-    var c = two.makeCircle(x, y, 10);
+for (i = 0; i < 50; i++) {
+    var rcolor = Math.floor(Math.random()*16777215).toString(16);
+    var x = Math.floor(Math.random()*two.width);
+    var y = Math.floor(Math.random()*two.height);
+    var c = two.makeCircle(x, y, 200);
+    var opacity = Math.random();
 // The object returned has many stylable properties:
     c.linewidth = 0;
     c.fill = "#"+ rcolor;
+    c.opacity = opacity;
 // Don't forget to tell two to render everything
 // to the screen
 }
