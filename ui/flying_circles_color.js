@@ -16,9 +16,8 @@ for (i = 0; i < 100; i++) {
     // two has convenience methods to create shapes.
     var c = two.makeCircle(x, y, r);
 // The object returned has many stylable properties:
-    c.linewidth = 10;
+    c.noStroke();
     c.fill="#"+ rcolor;
-    c.stroke = "#"+ rcolor;
     c.opacity = opacity;
     c.scaleFactor = 0.01;
     shapes.push(c);
@@ -26,7 +25,7 @@ for (i = 0; i < 100; i++) {
 
 var increment = [];
 for (i=0; i<shapes.length; i++) {
-    var acceleration = Math.floor(Math.random()*(two.width/100));
+    var acceleration = Math.floor(Math.random()*(two.width/200));
     increment.push(acceleration);
 }
 
@@ -50,4 +49,3 @@ two.bind('update', function(frameCount) {
 
 });
 two.play();  // Finally, start the animation loop
-//two.update()
